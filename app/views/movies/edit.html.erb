@@ -1,0 +1,49 @@
+<h1>Editing movie</h1>
+<form id="myForm"  action="http://v0.api.upyun.com/jcdypic/" method="post" enctype="multipart/form-data">
+  <%= upyun_form_input_tag() %>
+  <input type="file" name="file" />
+  <button type="submit">上传图片</button>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+    var options = { 
+        // target:        '#output2',   // target element(s) to be updated with server response 
+        beforeSubmit:  showRequest,  // pre-submit callback 
+        success:       showResponse  // post-submit callback  
+    }; 
+ 
+    // bind to the form's submit event 
+    $('#myForm').submit(function() {        
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); 
+}); 
+ 
+// pre-submit callback 
+function showRequest(formData, jqForm, options) {    
+    var queryString = $.param(formData);  
+    // alert('About to submit: \n\n' + queryString);     
+    return true; 
+} 
+ 
+// post-submit callback 
+function showResponse(responseText, statusText, xhr, $form)  {    
+ 
+    $("#movie_pic").val(
+    	(jQuery.parseJSON(responseText)).url
+    );
+    // alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+    //     '\n\nThe output div should have already been updated with the responseText.'); 
+
+} 
+</script>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @movie %> |
+<%= link_to 'Back', movies_path %>

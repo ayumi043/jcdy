@@ -1,0 +1,91 @@
+<% if request[:action] == "find_movie_by_name" %>
+  <% title "#{params[:q]} - 影片搜索结果 - 精彩电影网 - 2013最新电影,www.jcdy.co" %>
+<% elsif request[:action] == "find_movie_by_actor"  %>  
+  <% title "#{params[:q]} - 演员搜索结果 - 精彩电影网 - 2013最新电影,www.jcdy.co" %>
+<% else %>
+  <% title "全部电影 - 最新大片-百度影音" %>
+  <% keywords "全部电影,精彩电影,精彩电影网,情爱电影,精彩电影站,2013最新电影,www.jcdy.co,好看的百度影音电影,好看的电影排行榜,百度影音电影,在线电影" %>
+  <% description "全部电影,精彩电影提供最快最全的电影在线播放观看。每天第一时间更新,放送最新最好看的全高清免费电影,看最新高清电影就来精彩电影网电影排行榜" %>
+<% end %>
+
+<!-- Start:area -->
+<div class="area cfix">
+  <!-- Start:left -->
+  <div class="left">
+    <!-- Start:mod -->
+    <div class="mod modH">
+
+    <% if params[:q] %>
+      <div class="mod-tit">
+        <h2 class="newd">
+            <a class="hs-zone l" title="全部电影">找到&nbsp;<span class="highlight"><%= params[:q] %></span>&nbsp;的相关结果<span class="highlight"><%= @count %></span>个</a>
+        </h2>
+       <!--  <div class="btn-group sear">
+          <a class="btn <% if request[:action] == "index" then %>active<% else %>" href="<%= movies_all_search_path %>/<%= params[:q] %> <% end %>">全部</a>
+          <a class="btn <% if request[:action] == "find_movie_by_name" then %>active<% else %>" href="<%= movies_name_search_path %>/<%= params[:q] %> <% end %>">按片名搜</a>
+          <a class="btn <% if request[:action] == "find_movie_by_actor" then %>active<% else %>" href="<%= movies_actor_search_path %>/<%= params[:q] %> <% end %>">按演员搜</a>
+        </div> -->
+      </div>
+    <% else %>
+      <div class="mod-tit">
+        <h2 class="newd">
+            <a class="hs-zone l" title="全部电影">全部电影</a>
+        </h2>
+      </div>
+    <% end %>
+
+      <div class="mod-con">
+        <ul class="list cfix">
+          <% @movies.each do |movie| %>
+            <li>
+              <div class="pic">
+                <%= link_to image_tag(movie.pic.start_with?('http') ? movie.pic : "http://jcdypic.b0.upaiyun.com#{movie.pic}!115", :class => 'sz5', :width => 120, :height => 150), movie, {:title => movie.name, :target => "_blank" } %> 
+              </div> 
+              <strong class="bt">
+                <%= link_to params[:q] ? highlight(movie.name, params[:q], :highlighter => '<span style="color:#f60">\1</span>') : movie.name, movie, {:target => "_blank"} %>
+              </strong> 
+              <div class="actor">
+              <% if params[:q] %>
+                <%=  highlight( raw(movie.actor.split(/\s+|,/).map{ |x| "<a href='#{movies_actor_search_path}/#{x}' target='_blank'>#{x}</a>" }.join(' / ')), params[:q], :highlighter => '<span style="color:#f60">\1</span>') %>
+              <% else %>
+                <%= raw(movie.actor.split(/\s+|,/).map{ |x| "<a href='#{movies_actor_search_path}/#{x}' target='_blank'>#{x}</a>" }.join(' / ')) %>
+              <% end %>
+              </div>
+            </li>
+          <% end %>  
+        </ul>
+      </div>
+    </div>
+    <!-- End:mod --> 
+
+    <div class="page">
+      <%= paginate @movies %>
+    </div>
+
+  </div>
+  <!-- End:left -->
+
+  <!-- Start:right -->
+  <div class="right">
+
+    <!-- Start:排行榜 -->
+      <%= render "movies/top10_views" %>
+    <!-- End:排行榜 -->
+
+    <div class="blank5"></div>
+
+    <!-- Start:mod -->
+    <div class="modF" style="padding:0px;">
+      <script type="text/javascript">
+        alimama_pid="mm_12683985_3495095_11422688";
+        alimama_width=250;
+        alimama_height=250;
+      </script>
+      <script src="http://a.alimama.cn/inf.js" type="text/javascript"></script>
+    </div>
+    <!-- End:mod -->
+
+   </div>
+  <!-- End:right -->
+</div>
+<!-- End:area -->

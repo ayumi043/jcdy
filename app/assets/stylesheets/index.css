@@ -1,0 +1,95 @@
+body{background:#f5f5f5 !important;}
+.footer{margin-top:25px;}
+#focus{padding:20px 0 0;position:relative;}
+
+/* layout */
+.area .left{overflow:hidden;float:left;width: 718px;}
+.area .right{width:250px;float:right;padding-top:11px;overflow:hidden;}
+.left .mod-tit{height:45px;margin: 0px 0px 12px 0px;}
+.right .mod-tit{height:33px;text-align:right;line-height:20px;}
+.right .mod-tit h4{float:left;margin-right:15px;}
+.mod-tit .hs-sub,.mod-tit .hs-sub h3{float:left;margin:12px 0 0;font:15px/18px "Microsoft Yahei";}
+.mod-tit .hs-sub a,.mod-tit .hs-sub h3 a{padding:0 15px;display:block;float:left;background-position:right -163px;}
+.mod-tit .hs-sub a.end,.mod-tit .hs-sub h3 a.end{background:none;}
+.mod-tit .gg{margin-top:12px;}
+.video-1 .fla{width:370px;height:220px;position:relative;}
+.line{height:1px;overflow:hidden;margin:15px 0;}
+.areaAdv{margin-bottom:25px;}
+.areaLine{height:9px;overflow:hidden;margin:0 0 23px;background:url(line.png) no-repeat center top;}
+
+.areaA .right{padding:0;}
+/* charts */
+.charts{overflow:hidden;background:#fff;border:1px solid #dcdcdc;padding:13px 2px 13px 12px;margin-bottom: 10px;}
+.charts-tab{margin:0 -5px 15px 0;border-bottom:2px solid #7c7c7c;}
+.charts-tab li{float:left;line-height:27px;background:#e4e4e4;margin:0 2px 0 0;width:61px;text-align:center;}
+.charts-tab li a{display:block;}
+.charts-tab li a:hover{background:#7c7c7c;color:#fff;text-decoration:none;}
+.charts-tab li.on{background:#7c7c7c;font-weight:bold;}
+.charts-tab li.on a{color:#fff;}
+.charts-tab2 li{width:124px;}
+.charts-tab3 li{width:82px;}
+.charts .clist{/*background:url(ico-number.png) no-repeat;*/}
+.charts .clist li{line-height:30px;height:30px;/*padding:0 0 14px;*/float:left;width:100%;/*text-indent:23px;*/ border-bottom: 1px dotted #dcdcdc;}
+.charts .clist li em{margin-left:0px; font-weight: 700; font-style: italic;margin-right: 7px; color: #666; font-family: Arial, Helvetica, sans-serif;}
+.stree{color:#e12160 !important;}
+.charts .clistL{width:125px;float:left;}
+.charts .clistR{width:125px;float:right;background-position:0 -153px;}
+.charts .clist-2{background-position:0 -153px;}
+/* mod */
+.mod{ background:#fff;border:1px solid #dcdcdc;padding:8px 0px 18px 22px;width:694px !important;
+  margin-bottom: 10px;
+}
+.add{margin-left: -8px;margin-bottom: 8px;}
+
+.modD li{display:inline;margin:0 10px 0 0;}
+.modD li a{margin:0 10px 0 0;}
+
+.modF{width:250px;padding:0px !important;}
+
+#footArea{height: auto !important;background:none;margin-top: 0px !important;}
+.newd a{font-size: 16px !important;font-family: "Microsoft Yahei"}
+.newd a:hover{color: #000; text-decoration: none;}
+.clistL{width: 225px !important;}
+.pic{width: 115px;height: 150px !important;overflow: hidden;}
+.mod-tit{height: 30px !important; line-height: 30px;}
+.area{margin-top: 15px !important;}
+.right{padding-top: 0px !important;}
+.list li{width: 120px;margin-right: 18px;}
+.bg{width: 120px;height: 22px;background:#000;z-index:1;filter:alpha(opacity=50);opacity: 0.5;left:0px; position: absolute; bottom:0px;margin-bottom: 0px !important;}
+.met{width: 115px;height: 22px;line-height: 22px;overflow: hidden; color:#fff;z-index:2;left:0px; position: absolute; bottom:0px; text-align: right;padding-right: 5px;margin-bottom: 0px !important;}
+.list strong{text-align: center;}
+.bt{text-align: left !important;}
+.actor{height: 38px;overflow: hidden;}
+.actor a{color:#999 !important}
+.actor a:hover{color:#999 !important}
+.top8{margin-top: 8px;font-size: 14px;padding-right: 15px;}
+.top8 a{color: #ff0000; font-size: 16px;}
+.more{float:right;font-size:12px;padding-right:24px;}
+.mod-tit span{font-size: 14px;color:#000;}
+
+.input-append{width: 190px;float: right;}
+
+#foot{margin-top: 12px !important;}
+.newd span{font-size: 16px !important;}
+.highlight{color:#f60 !important;}
+.sear{float: right;padding-right: 16px;}
+.active{cursor: default;}
+.sublist{margin-left: 4px;}
+.sublist li{width:120px; padding-left: 16px;
+  background:url(v4.gif) 0px center no-repeat;
+  float:left;height: 24px; 
+  line-height: 24px; 
+  overflow: hidden;
+}
+.flink{border-bottom:1px dotted #dcdcdc;margin:18px auto;}
+.ffli{width:60px;background:#e4e4e4;height:25px;line-height:25px; text-align:center;color:#333;}
+.flinklist{margin-bottom:20px;padding-left:7px;}
+.flinklist{padding-right: 15px;}
+.flinklist a{padding:0px 6px 0px 6px;}
+.flinklist a:hover{color:#333;}
+
+.btn{width:48px; height:28px !important;}
+.fbottom{width:100%;border-top:2px solid red;background:#333;height: 110px;padding-top:5px;}
+.tac{width: 760px !important;}
+.footnav{width: 980px;  text-align: center; margin:12px auto 8px auto;}
+.footnav a{color:#999; padding: 5px 10px 10px 10px;}

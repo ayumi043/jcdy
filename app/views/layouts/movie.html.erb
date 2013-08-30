@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <title><%= yield(:title)%></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="<%= yield(:keywords)%>" name="keywords" />
+  <meta content="<%= yield(:description)%>" name="description" />
+  <meta name="googlebot" content="index,follow">
+  <meta name="robots" content="index,follow">
+  <link href="<%= asset_path 'favicon.ico' %>" rel="bookmark" type="image/x-icon" /> 
+  <link href="<%= asset_path 'favicon.ico' %>" rel="icon" type="image/x-icon" /> 
+  <link href="<%= asset_path 'favicon.ico' %>" rel="shortcut icon" type="image/x-icon" />
+  <link href="http://libs.baidu.com/bootstrap/2.0.4/css/bootstrap.min.css" rel="stylesheet" />
+  <%= stylesheet_link_tag "movies" %>
+  <%= yield(:head) %>
+</head>
+
+<body>
+
+  <div class="navs">
+    <div class="nav_inner">
+
+      <div class="channel">
+        <ul>
+          <li class="small_logo">
+            <a href="<%= root_url %>" title="首页">首页</a>
+          </li>
+          <% @categories.each do |category| %>
+          <li>
+            <a href="<%= category_path(category) %>" title="<%= category.name %>" class="channel_item">
+              <%= category.name %></a>
+          </li>
+          <% end %>
+          <li><a href="<%= live_path %>">电视直播</a></li>
+        </ul>
+      </div>
+   
+      <div class="input-append">
+        <form action="<%= movies_all_search_path %>" method="get" target="_blank" accept-charset="utf-8">
+          <input class="span2" name="q" id="appendedInputButton" type="text" value="无性不爱">
+          <input class="btn" type="submit" value="搜索">
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <%= yield %>
+
+  <div class="playlist clearfix">
+  <div class="bdy tj">推荐影片：</div>
+    <% cache("tj#{@movie.categories.first.id}", :expires_in => 48.hour) do %>
+        <% @top10_movies = @movie.categories.first.movies.sort_by{|x| x.hits.get() }.reverse.take(14) %>
+          <div class="tjlist">
+            <ul class="list cfix">
+              <% @top10_movies.each do |movie| %>
+                <li>
+                  <div class="pic">
+                    <%= link_to image_tag(movie.pic.start_with?('http') ? movie.pic : "http://jcdypic.b0.upaiyun.com#{movie.pic}!115", :class => 'sz5', :width => 120, :height => 150), movie, {:title => movie.name, :target => "_blank"} %> 
+                  </div> 
+                  <strong>
+                    <%= link_to movie.name, movie, {:title => movie.name, :target => "_blank"} %>
+                  </strong> 
+                </li>
+              <% end %>
+            </ul>
+        </div>
+      <% end %>
+  </div>
+
+  <div id="footArea">
+    <div id="foot">
+      <div class="area tac">
+        免责声明:本站不保存视频，所有视频均从互联网收集而来，版权归原创者所有，如果侵犯了你的权益或是有其他不妥，请通知我们，我们会及时删除相关内容，谢谢合作！如果您发现有不符合规定的，请及时联系我们处理（联系邮箱：914567714#qq.com）。
+      </div>
+    </div>
+  </div>
+    
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+  <%#= javascript_include_tag "application" %>
+  
+  <div style="display:none;">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39511156-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </div>
+
+</body>
+</html>

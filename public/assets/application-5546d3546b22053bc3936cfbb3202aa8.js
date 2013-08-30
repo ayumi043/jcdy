@@ -1,0 +1,1 @@
+(function(){$(function(){return $("#sform .bt").click(function(){return $.trim($("#gNewSearch").val())===""?!1:void 0})})}).call(this);

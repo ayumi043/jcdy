@@ -1,0 +1,71 @@
+<% title "#{@movie.name} 百度影音,高清在线观看 - #{@movie.categories.map{|x|x.name}.join('-')}电影- 百度影音 - 精彩电影网" %>
+<% keywords "#{@movie.name}高清,《#{@movie.name}》，百度影音电影#{@movie.name}在线观看，百度影音播放器" %>
+<% description "电影《#{@movie.name}》免费高清，免费在线观看和高清晰播放模式均由精彩电影网收集于互联网，#{@movie.categories.map{|x|x.name}.join('-')}《#{@movie.name}》提供百度影音高清播放模式" %>
+
+<%# stylesheet '' %>
+
+<div class="breadcrumbs">
+  您现在的位置：<a href="/">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;  
+  <% 
+   str = ""
+   @movie.categories.each do |category| %>
+    <% str += <<-EOF
+        <a class="mod_path_cat_title _hotkey" href="#{category_path(category)}">
+          #{category.name} - 
+        </a> 
+    EOF
+    %>   
+  <% end %>  
+  <% str.slice!( (str).rindex('-')) %>
+  <%=raw str %>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<%= @movie.name %> 
+</div>
+
+<div class="meta_wrap">
+  <h1 class="title">
+    <span id="h1_title"><%= @movie.name %></span>
+  </h1>
+  <div class="detail_pic">
+    <%= image_tag (@movie.pic.start_with?('http') ? @movie.pic : "http://jcdypic.b0.upaiyun.com#{@movie.pic}!220"), 
+                  {:alt => @movie.pic, :width => 200, :height => 250} %>
+  </div>
+  
+  <div class="meta">
+    <ul class="details_list clearfix">
+      <li>
+        <span class="info">主演:</span>
+        <%= raw(@movie.actor.split(/\s+|,/).map{ |x| "<a href='#{movies_actor_search_path}/#{x}' target='_blank'>#{x}</a>" }.join('&nbsp;&nbsp;')) %>
+      </li>
+      <li>
+        <span class="info">地区:</span><%= @movie.area %></li>
+      <li>
+        <span class="info">类别:</span><%= raw str %></li>
+      <li>
+        <span class="info">年份:</span><%= @movie.release %></li>
+      <li class="jq">
+        <span class="info">剧情:</span><%= sanitize @movie.intro %></li>
+    </ul>
+  </div>
+
+  <div class="meta_r">
+    <script type="text/javascript"> 
+      alimama_pid="mm_12683985_3495095_11492808"; 
+      alimama_width=300; 
+      alimama_height=250; 
+    </script> 
+    <script src="http://a.alimama.cn/inf.js" type="text/javascript"> 
+    </script>
+  </div>
+</div>
+
+<div class="playlist clearfix">
+  <div class="bdy">
+    <div class="bdy_notice">百度影音需要安装播放器才能观看 
+      <a class="bdydl" rel="nofollow" href="http://dl.p2sp.baidu.com/BaiduPlayer/un2/BaiduPlayerNetSetup_2.exe">点击下载最新版本。</a>
+    </div>
+    <img src="<%= asset_path 'baiduhd.gif' %>" width="76" height="20" />
+  </div>
+  <% @movie.baiduvideos.each_with_index do |baiduvideo, index| %>
+    <a class="vli" href="<%= "#{movie_videos_path}/#{index}"%>" target="_blank" title="<%= baiduvideo.name %>" >
+      <%= baiduvideo.name %></a>
+  <% end %>
+</div>

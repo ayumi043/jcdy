@@ -1,0 +1,102 @@
+body{background:#fcfcfc;}
+/*bgs*/
+.bartop,
+.newtimeBar,
+.login_record,
+.newmenubox,
+.navmain a span{background:url(bgs.png);}
+.ico-all,.ico-ser,.ico-his,.ico-up,.ico-new,
+.btn_all,.btn_all_hover,
+.newsearch .text,.newsearch .text_click,.newsearch .bt,.newsearch .btOver,.newsearch .btDown,
+.newp_record,.newp_record_over,.newp_record span,.newp_record_over span,.p_record_down,.p_record_down span,
+.sub_lstyle,.ico_rank,.ico_rank_hover,.ico_js,.ico_js_hover,
+.newtimeBox li .item_t, .newtimeBox li.on .item_t,
+.del_4,.del_4:hover,
+.ico_pre,.ico_next_2,.ico_pre:hover,.ico_pre_none,.ico_next_none,.ico_next_2:hover,.ico_pre:active,.ico_next_2:active,
+.nav_home,.nav_news,.nav_review,.nav_upload,.nav_set,.nav_quit,
+.login_box .inner,.login_box_hover .inner,.login_box_active .inner,.login_box .outer,.login_box_hover .outer,.login_box_active .outer,
+.ico_play,.ico_next,.ico_del,
+.toparrow,
+.ico_rnew,
+.log_info form .isubmit,.log_info form .isubmit_hover,.log_info form .isubmit_active,
+.ico_subs,.btn_blank{background:url(h-icon.png) no-repeat;}
+input,button,select,textarea{outline:none}
+/*clear*/
+.cfix, .cf, .clear {zoom:1;}
+/*header*/
+.header{z-index:1\9;position:relative\9;width:100%\9;background:#fbfbfb;}
+.bartop{background-position:0 0;background-repeat:repeat-x;height:30px;line-height:30px}
+.b-inner{width:980px;margin:0 auto;text-align:right;}
+.b-inner a,.b-inner span{display:inline-block;margin-left:6px;}
+.b-inner span{color:#d1d1d1}
+.ico-new{background-position:0 -235px;height:16px;width:28px;display:inline-block;}
+.newareaTop{border-bottom:1px solid #bdbdbd;text-align:left;padding:10px 0px 16px 0px;}
+/*newareaTop*/
+.newareaTop .logo_ad_box{width:260px;height:54px;float:left;overflow:hidden;}
+.newareaTop .photo{padding:5px 0 0;margin-top:7px;margin-top:5px\0;*margin-top:6px;_margin-top:8px;}
+
+.btn_all{background-position:-154px 0;width:91px;height:36px;display:block;margin-right:10px}
+.btn_all span,.btn_all_hover span{display:none}
+.btn_all:hover,.btn_all_hover{background-position:-154px -45px;width:91px;height:36px;display:block;margin-right:10px}
+
+/*newsearch */
+.newsearch {position: relative;z-index:302;/*overflow:hidden;*/width:393px;}
+.newsearch form{display:block;}
+.newsearch .text{background-position:0 -99px;width:394px;height:37px;line-height:31px;border:0;}
+.newsearch .text_click{background-position:0 -143px;width:394px;height:37px;border:0;}
+.newsearch .t-input{border:0;display:inline-block;padding:7px 0 7px 10px;color:#999;background:transparent;width:334px;float:left;_width:331px;}
+.newsearch .text a,.newsearch .text_click a{display:inline-block;cursor:pointer;z-index:400px;position:relative}
+.newsearch .bt{background-position:-1px -184px;width:46px;height:26px;border:0;cursor:pointer;float:right;margin:3px 3px 3px 0;}
+.newsearch a:hover input.bt,
+.newsearch .btOver{background-position:-57px -184px;width:46px;height:26px;border:0;}
+.newsearch a:active input.bt,
+.newsearch .btDown{background-position:-116px -184px;width:46px;height:26px;border:0;}
+.newsearch .kword{z-index:200;}
+.kword a{display:inline-block;padding-right:10px;color:#838383}
+.kword a:hover{color:#dd0d0b;}
+.kword div a{padding-right:0;}
+.ico_rank,.ico_rank_hover,.ico_js,.ico_js_hover{padding-left:20px;margin-left:5px;}
+.ico_rank{background-position:0px -436px;padding-right:3px}
+.ico_js{background-position:0px -499px;}
+/*newmenubox*/
+.newmenubox{background-repeat:repeat-x;background-position:0px -52px;}
+.newmenubox .navbar,.newmenubox .subnavbar{width:980px;margin:0 auto;}
+.newmenubox .navbar{height:39px;position:relative;z-index:10;}
+
+.navmain{width:780px}
+.navRight{width:95px;}
+.navbar li{height:36px;line-height:36px;padding-top:2px;}
+.navmain li{float:left}
+.navRight li{float:right;}
+.navmain .selected a,.navmain .selected a span,.navmain a:hover,.navmain a:hover span,
+.navRight .selected a,.navRight .selected a span,.navRight a:hover,.navRight a:hover span{background:url(bg_nav.png) no-repeat;}
+.navmain a,
+.navRight a{height:34px;display:block;color:#fff;position:relative;float:left;}
+.navmain a span,
+.navRight a span{background-repeat:no-repeat;display:block;height:34px;cursor:pointer;text-decoration:none;float:left;}
+.navmain a:hover,
+.navRight a:hover{height:36px;text-decoration:none;color:#fff;position:relative;}
+.navmain li.selected a,.navmain li.selected a:hover,
+.navRight li.selected a,.navRight li.selected a:hover {color:#db2830;/*font-weight:bold;*/height:36px;z-index:100;position:relative;}
+
+.navmain a{font:15px/36px "Microsoft Yahei",Arial;padding-left:10px;*padding-left:13px;*margin-left:-3px;}
+.navmain a span{background-position:right -795px;padding-right:10px;}
+.navmain .end span{background:none}
+.navmain a:hover,.navRight a:hover{background-position:left -45px;}
+.navmain a:hover span,.navRight a:hover span{background-position:right -45px;height:34px;text-decoration:none;}
+.navmain a:hover{padding-left:13px;margin-left:-3px;}
+.navmain li.selected a,.navmain li.selected a:hover,
+.navRight li.selected a,.navRight li.selected a:hover{background-position:left 0;}
+.navmain li.selected a span,.navmain li.selected a:hover span,
+.navRight li.selected a span,.navRight li.selected a:hover span{background-position:right 0;}
+.navmain li.selected a,.navmain li.selected a:hover{padding-left:13px;margin-left:-3px;}
+.navRight a{padding-left:4px;font:13px/36px "Microsoft Yahei",Arial;margin-right:1px;}
+.navRight a span{padding-right:4px}
+
+/*foot*/
+#footArea{margin-top:15px;}
+#foot{width:980px;margin:0 auto;}
+#foot .unline a,
+#foot .mailto{color:#999;}
+#foot .area{line-height:20px;width:800px;margin:0 auto;}
+.footer #foot{text-align:center;}

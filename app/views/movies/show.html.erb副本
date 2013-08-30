@@ -1,0 +1,827 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>影片名称:</b>
+  <%= @movie.name %>
+</p>
+<p>
+  <b>影片封面:</b>
+  <%= @movie.pic %>
+</p>
+<p>
+  <b>影片演员:</b>
+  <%= @movie.actor %>
+</p>
+<p>
+  <b>影片地区:</b>
+  <%= @movie.area %>
+</p>
+
+<p>
+  <b>影片介绍:</b>
+  <%= @movie.intro %>
+</p>
+<p>
+  <b>更新时间:</b>
+  <%= @movie.published_on %>
+</p>
+<p>
+  <b>访问数:</b>
+  <%= @movie.hits %>
+</p>
+
+<% if @movie.categories.size > 0 %>
+  <h2>影片分类:</h2>
+  <% for category in @movie.categories %>
+    <h3><%= category.name %></h3>
+  <% end %>
+<% end %>
+
+<% if @movie.kuaibovideos.size > 0 %>
+  <h2>快播播放地址:</h2>
+  <% for kuaibovideo in @movie.kuaibovideos %>
+    <h3><%= kuaibovideo.name %></h3>
+    <p><%=raw kuaibovideo.link %></p>
+  <% end %>
+<% end %>
+
+<%#= kuaibovideo.link[0]%>
+
+<h2>添加快播地址</h2>
+<%= form_for [@movie, Kuaibovideo.new] do |f| %>
+  <p><%= f.label :name %> <%= f.text_field :name %></p>
+  <p><%= f.text_field :link %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
+
+
+
+<!doctype html>
+<html>
+<head>
+<title>《重返地球》 预告片2 - 搜狐视频</title>
+<meta http-equiv="content-type" content="text/html; charset=GBK" />
+<meta name="keywords" content="重返地球 预告片2;重返地球 预告片2高清;重返地球 预告片2完整版;重返地球 预告片2电影;科幻片;剧情片;" />
+<meta name="description" content="《重返地球》 预告片2,《重返地球》 预告片2在线观看" />
+<meta name="robots" content="all" />
+<link type="text/css" rel="stylesheet" href="http://css.tv.itc.cn/global/global.css" />
+<link type="text/css" rel="stylesheet" href="http://css.tv.itc.cn/channel/play130315.css" />
+</head>
+<body>
+<div class="areaTop">
+    <div class="area clear">
+        <div class="logo_ad_box">
+            <h1 class="logo">
+                <a target="_blank" href="http://tv.sohu.com">
+                    <img width="93" height="24" src="http://css.tv.itc.cn/global/images/logo.png" alt="tv视频" /></a>
+</h1>
+<a target="_blank" href="http://tv.sohu.com/voice/" class="mL6"><img src="http://css.tv.itc.cn/channel/play_images/logo-goodvoice.png" alt="好声音" /></a>
+        </div>
+        <div class="search l">
+            <form id="sform" method="get" name="sform" action="http://so.tv.sohu.com/mts" target="_blank" autocomplete="off">
+                <div class="text l">
+                    <input id="gNewSearch" name="wd" type="text" value="吸血鬼日记" class="fs14" />
+                    <input name="box" type="hidden" value="1" class="fs14" />
+                </div>
+                <a href="javascript:;"><input class="bt vat pointer l" type="submit" value="" /></a>
+            </form>
+        </div>
+                <div class="l_upload l">                    
+            <a target="_blank" href="http://so.tv.sohu.com/list_p11_p2_p3_p4-1_p5_p6_p70_p80_p9_2d2_p101_p11.html" class="btn_all" id="2ndFloatNavBt">全部</a><a target="_blank" href="http://my.tv.sohu.com/user/video/upload.do">上传</a>
+        </div>
+        <div class="photo r rel" id="navLocker"></div>
+    </div>
+</div>
+
+<!--floatnav 这里是公用碎片-->
+<div id="2ndFloatNav" style="display:none;" class="popmenu">
+    <div class="inner clear">
+        <dl class="itema" style="padding-right:10px;width:450px;">
+            <dt><a target="_blank" title="" href="http://tv.sohu.com/">首页</a></dt>
+            <dd>
+            <a target="_blank" title="" href="http://tv.sohu.com/news/">新闻</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/drama/">电视剧</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/movie/">电影</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/show/">综艺</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/comic/">动漫</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/yule/">娱乐</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/self/">原创</a>
+            <a target="_blank" title="" href="http://show.sohu.com/">秀场</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/music/">音乐</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/documentary/">纪录片</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/mil/">军事</a>
+            <a target="_blank" title="" href="http://store.tv.sohu.com/edu/">教育</a>
+            <a target="_blank" title="" href="http://live.tv.sohu.com/">直播</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/travel/">旅游</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/microprogram/">微栏目</a>
+            <a target="_blank" title="" href="http://www.sohu.com/">搜狐首页</a>
+            </dd>
+        </dl>
+        <dl class="itemb" style="padding-right: 10px;">
+            <dt><a target="_blank" title="" href="http://tv.sohu.com/vip/">会员</a></dt>
+            <dd>
+            <a target="_blank" href="http://store.tv.sohu.com/web/order/orderList.do">我的订单</a>
+            <a target="_blank" title="" href="http://store.tv.sohu.com/web/card/card_act.do">激活VIP卡</a>
+            </dd>
+        </dl>
+        <dl class="itemc" style="width:210px;">
+            <dt><a target="_blank" title="" href="http://my.tv.sohu.com/user/">服务</a></dt>
+            <dd>
+            <a target="_blank" title="" href="http://my.tv.sohu.com/user/">空间</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/hothdtv/">排行榜</a>
+            <a target="_blank" title="" href="http://index.tv.sohu.com/">指数</a>
+            <a target="_blank" title="" href="http://so.tv.sohu.com/list_p11_p2_p3_p4-1_p5_p6_p70_p80_p9_2d2_p101_p11.html">分类</a>
+            <a target="_blank" title="" href="http://open.tv.sohu.com/">开放平台</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/upload/hdfeedback/index.jsp">帮助</a>
+            </dd>
+        </dl>
+        <dl class="itemb">
+            <dt><a target="_blank" title="" href="http://tv.sohu.com/app/">客户端</a></dt>
+            <dd>
+            <a target="_blank" title="" href="http://tv.sohu.com/app/?x=1">移动客户端</a>
+            <a target="_blank" title="" href="http://tv.sohu.com/app/">搜狐影音</a>
+            </dd>
+        </dl>
+    </div>
+</div>
+<!--End:2ndFloatNav-->
+<div id="loginTimeBar" class="timeBar" style="display:none;">
+    <div class="area clear">
+        <div id="navLoginBox" class="infoBox l color2"></div>
+        <div id="gHistory" class="timeBox r"></div>
+    </div>
+</div>
+<!--End:loginTimeBar-->
+<div id="timebar" class="timeBar" style="display:none;">
+    <div class="area clear record">
+        <div class="clear">
+            <div id="timelist" class="login_record l">
+                <div class="record_hd clear">
+                    <ul class="l" id="timetab"></ul>
+                    <div class="hd_link r clear" id="timebtns"></div>
+                </div>
+                <div class="record_bd"></div>
+            </div>
+            <div id="gNavUserInfo" class="user_nav r">
+                <ul>
+                    <li><a href="http://my.tv.sohu.com/user/home.do" target="_blank" class="nav_home">我的首页</a></li>
+                    <li>
+                        <a href="http://my.tv.sohu.com/user/message/list.do" target="_blank" class="nav_news">查看消息</a>
+                        <div style="display: block;" class="message_tips clear hide" id="infoNum">
+                            <div class="msg_lt"></div>
+                            <div class="msg_mid">0</div>
+                            <div class="msg_rt"></div>
+                        </div>
+                    </li>
+                    <li><a href="http://tv.sohu.com/ifox/" target="_blank" class="nav_review">下载视频</a></li>
+                    <li><a href="http://my.tv.sohu.com/user/video/upload.do" target="_blank" class="nav_upload">上传视频</a></li>
+                    <li><a id="gNavBeVIP" href="http://store.tv.sohu.com/web/order/orderList.do" target="_blank" class="nav_set">我的订单</a></li>
+                    <li class="last">
+                        <span class="nav_quit">
+                            <a href="http://my.tv.sohu.com/user/profile/basic.do" target="_blank">设置</a>
+                            <span> | </span>
+                            <a href="javascript:sohuHD.doLogout();">退出</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="filter_box"></div>
+        <div class="filter_pop"></div>
+    </div>
+</div>
+
+<!--end:用户抽屉-->
+
+<script>
+messagebus.publish('core.loaded_nav');
+window.__tv_M && __tv_M.addTag('nav');
+</script>
+<div class="area cfix" id="contentA">
+    <div class="left">
+        <div class="crumb"><a href="http://tv.sohu.com/movie/">电影</a><span class="f-song">&gt;</span><a href ="javascript:sohuHD.searchKey('科幻片',7,1,1);">科幻片</a>/<a href ="javascript:sohuHD.searchKey('剧情片',7,1,1);">剧情片</a><span class="f-song">&gt;</span><a href="http://tv.sohu.com/s2012/cfdq/#pianhua">重返地球片花</a>
+    </div>
+        
+      <h1 id="video-title" title="重返地球 预告片2">重返地球 预告片2</h1>
+    
+    </div>
+    <div class="right">
+        <div class="ad"><div id="cp_64_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('cp_64_1');
+</script></div>
+    </div>
+</div>
+
+<div class="area cfix" id="contentB">
+    <div class="blockFla">    
+    <div class="skyAD" style="position:relative;width:100%;height:0;">
+      <div id="vcl_60_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('vcl_60_1');
+</script>
+      <div id="vcr_60_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('vcr_60_1');
+</script>
+    </div>
+        <div id="sohuplayer" class="fla"></div>
+<script>
+so_width = 640;
+if(isWideMod) {
+    so_width = 980;                               
+    document.getElementById("contentB").className+=" videoBig";
+}
+var _admaster_callback = function (timer,url) {
+    var us = [];
+    if (window.sohuHD && sohuHD.pingback) {
+        us = url.split('|');
+        for (var i = 0; i < us.length; i++) {
+            if (us[i].indexOf('admaster') > -1) {
+                sohuHD.pingback(us[i] + escape(window.location.href));
+            } else {
+                sohuHD.pingback(us[i]);
+            }
+        }
+    }
+};
+</script>
+<script>
+messagebus.publish('core.rendervideo');
+</script>
+      <div id="j-pointbox" class="vBox vBoxA cfix" style="display:none;"> </div>
+<div class="videoBox mB20 cfix">
+            <a href="#" id="j-up" class="vbtn-ding">0</a>
+            <a href="#" id="j-down" class="vbtn-cai"><em>0</em></a>
+            <a href="#" id="j-pointeye" class="vbtn-kan">看点</a>
+      <span id="j-share" class="vbtn-fa">
+      </span>
+            <a id="j-collect" href="#" class="vbtn-fav">收藏</a>
+            <a id="j-desktop" href="#" class="vbtn-zhuo" style="display:none">放桌面</a>
+            <a id="j-download" href="#" class="vbtn-xia" style="display:none">下载</a>
+            <a href="http://my.tv.sohu.com/user/sharing/moneyunapply.do" target="_blank" class="vbtn-money">收入</a>
+            <a id="j-btnindex" class="vbtn-play"><em>0</em></a>
+        </div>
+    <!-- End:videoBox -->
+    <div id="j-share-content" class="vBox vBoxB">
+            <span class="arr"></span>
+      <div class="d2">
+        <strong class="c-black">一键转发至：</strong>
+                <span id="shareVideoSNSList"></span>
+              
+      </div>
+            <div class="row2"><strong class="c-black">转贴到BLOG或BBS:</strong></div>
+            <div class="d2"><span class="bti">Flash地址：</span>
+            
+                <input type="text" class="in" value="http://www.tv.sohu.com" id="shareVideoFlash">
+                <span class="btn-3 cpflash" cpid="shareVideoFlashflash" inputid="shareVideoFlash">
+                    <span>复制<span id="shareVideoFlashflash" class="cpyflash"></span></span>
+                </span>
+            </div>
+            <div class="blank10"></div>
+            <div class="d2"><span class="bti">Html 代码：</span>
+                <input type="text" class="in" value="" id="shareVideoHtml">
+                <span class="btn-3 cpflash" cpid="shareVideoHtmlflash" inputid="shareVideoHtml">
+                    <span>复制<span id="shareVideoHtmlflash" class="cpyflash"></span></span>
+                </span>
+            </div>
+        </div>
+    <div id="j-index-content" class="vBox vBoxC">
+            <span class="arr"></span>
+        </div>
+    </div>
+    <script>
+messagebus.publish('core.loaded_video');
+window.__tv_M && __tv_M.addTag('playlist_start');
+</script>
+    <div class="modA" id="playlist"></div>
+   <script>
+    messagebus.publish('core.loaded_first_screen');
+    </script>
+    <!-- Start:right -->
+    <div class="right">
+    <!-- Start:mod -->
+    
+      <script>window.__tv_M && __tv_M.addTag('similar_start');</script>
+<div class="modr modB">
+            <div class="mod-tit cfix"><h2>你或许喜欢</h2></div>
+            <div class="mod-con">
+                <ul class="list listA cfix" id="similar"></ul>
+            </div>
+        </div>
+    
+    <!-- End:mod -->
+    <div id="tuiguang">
+      
+        <div class="modr modB">
+            <div class="mod-tit cfix"><h2>小编推荐</h2></div>
+            <div class="mod-con">
+                <ul class="list listA cfix">
+
+          <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2012/mztkngy/?src=bjtj_play" title="名侦探柯南"><img src="" lazysrc="http://i3.itc.cn/20130221/2b7d_b9aa4134_30c4_dd42_61ae_27947ca5567b_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="名侦探柯南" target="_blank" href="http://tv.sohu.com/s2012/mztkngy/?src=bjtj_play">18年升入2年级</a><br>名侦探柯南</strong><p><a class="acount" rel="5102665" target="_blank" href="http://tv.sohu.com/s2012/mztkngy/?src=bjtj_play"></a></p></li>
+
+          <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2011/yjdwb/?src=bjtj_play" title="妖精的尾巴"><img src="" lazysrc="http://i3.itc.cn/20130221/2b7d_8162186b_b3d3_706c_ea67_e8f766dcccc9_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="妖精的尾巴" target="_blank" href="http://tv.sohu.com/s2011/yjdwb/?src=bjtj_play">卖萌称霸全世界</a><br>妖精的尾巴</strong><p><a class="acount" target="_blank" rel="1007177" href="http://tv.sohu.com/s2011/yjdwb/?src=bjtj_play"></a></p></li>
+
+
+
+          <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2012/hunter/?src=bjtj_play" title="全职猎人"><img src="" lazysrc="http://i1.itc.cn/20130221/2b7d_0d44dba7_85de_1557_e29c_20335005df4a_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="全职猎人" target="_blank" href="http://tv.sohu.com/s2012/hunter/?src=bjtj_play">正太搅基变强大</a>全职猎人</strong><p><a class="acount" target="_blank" rel="1008054" href="http://tv.sohu.com/s2012/hunter/?src=bjtj_play"></a></p></li>
+
+          <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2013/amnesia/?src=bjtj_play" title="1月新番-失忆症"><img src="" lazysrc="http://i3.itc.cn/20130221/2b7d_51e153f2_75ff_c05e_0d41_ec2510affb65_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="1月新番-失忆症" target="_blank" href="http://tv.sohu.com/s2013/amnesia/?src=bjtj_play">呆萌妹傲世后宫</a><br>1月新番-失忆症</strong><p><a class="acount" target="_blank" rel="5155422" href="http://tv.sohu.com/s2013/amnesia/?src=bjtj_play"></a></p></li>
+
+
+                                        <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2013/nana/?src=bjtj_play" title="NANA"><img src="" lazysrc="http://i1.itc.cn/20130221/2b7d_4c0e3497_c219_9cfb_9cff_fe97985cd575_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="NANA" target="_blank" href="http://tv.sohu.com/s2013/nana/?src=bjtj_play">辣妹软妹大绝恋</a>NANA</strong><p><a class="acount" rel="5161171" target="_blank" href="http://tv.sohu.com/s2013/nana/?src=bjtj_play"></a></p></li>
+
+
+          <li><div class="pic"><a target="_blank" href="http://tv.sohu.com/s2013/btooom/?src=bjtj_play" title="惊爆游戏"><img src="" lazysrc="http://i1.itc.cn/20130221/2b7d_9f4f506a_7493_2a77_a9d3_38f42d62a241_1.jpg" class="sz6" height="60" width="80"></a></div><strong><a title="惊爆游戏" target="_blank" href="http://tv.sohu.com/s2013/btooom/?src=bjtj_play">爆乳版饥饿游戏</a>惊爆游戏</strong><p><a class="acount" rel="5155417" target="_blank" href="http://tv.sohu.com/s2013/btooom/?src=bjtj_play"></a></p></li>
+
+      </ul>
+            </div>
+        </div>
+      
+    </div>
+        
+        <!-- Start:mod -->
+        <div class="modr modE">
+          <div class="mod-tit cfix"><a class="r" target="_blank" href="http://tv.sohu.com/vip/">更多</a><h2>会员专区</h2></div>
+            <div class="mod-con">
+            <ul class="list listA cfix">
+            <li>
+            <div class="pic">
+                <a href="http://store.tv.sohu.com/content/5174209/984677/2190/220004.html?pvid=005c843a2b535bbb" target="_blank"><img class="sz6" alt="" width="88" height="88" src="http://i3.itc.cn/20130315/872_e5033c0b_6e38_3152_c4b3_c62287a1f6f1_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">115:21</span>
+            </div>
+            <strong><a href="http://store.tv.sohu.com/content/5174209/984677/2190/220004.html?pvid=005c843a2b535bbb" target="_blank">艺校女生被潜内幕-上位</a></strong>
+            <p><a href="http://store.tv.sohu.com/content/5174209/984677/2190/220004.html?pvid=005c843a2b535bbb" class="bcount" target="_blank">990,675</a></p>
+            </li>
+            <li>
+            <div class="pic">
+                <a href="http://store.tv.sohu.com/content/5172003/973880/2183/220004.html?pvid=005c843a2b535bbb" target="_blank"><img class="sz6" alt="" width="88" height="88" src="http://i2.itc.cn/20130228/872_15800904_d605_b41e_48d1_6d9c3c56e8d5_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">110:46</span>
+            </div>
+            <strong><a href="http://store.tv.sohu.com/content/5172003/973880/2183/220004.html?pvid=005c843a2b535bbb" target="_blank">票房神话-人再囧途之泰囧</a></strong>
+            <p><a href="http://store.tv.sohu.com/content/5172003/973880/2183/220004.html?pvid=005c843a2b535bbb" class="bcount" target="_blank">914,094</a></p>
+            </li>
+            <li>
+            <div class="pic">
+                <a href="http://store.tv.sohu.com/content/5147500/925555/2160/220004.html?pvid=005c843a2b535bbb" target="_blank"><img class="sz6" alt="" width="88" height="88" src="http://i1.itc.cn/20130205/872_862ec901_cffb_ca40_2609_49c429e3abbf_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">92:46</span>
+            </div>
+            <strong><a href="http://store.tv.sohu.com/content/5147500/925555/2160/220004.html?pvid=005c843a2b535bbb" target="_blank">我爸刚弄死他-飓风营救2</a></strong>
+            <p><a href="http://store.tv.sohu.com/content/5147500/925555/2160/220004.html?pvid=005c843a2b535bbb" class="bcount" target="_blank">680,926</a></p>
+            </li>
+</ul>
+            </div>
+        </div>
+        <!-- End:mod -->
+        <!-- Start:mod -->
+        <div id="rec_61_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('rec_61_1');
+</script>
+
+        <!-- End:mod -->
+        <!-- Start:mod -->
+        <div id="topShareList" class="modr modE">
+    <div class="mod-tit cfix"><h2>用户分享</h2></div>
+    <div class="mod-con">
+        <ul class="list listA cfix">
+            <li>
+            <div class="pic">
+                <a href="http://my.tv.sohu.com/user/detail/43236109.shtml" target="_blank"><img class="sz6" alt="" width="88" height="88" lazySrc="http://i0.itc.cn/20130315/607_6fc81c2b_cc4f_de3f_dc1b_e43fddaf4035_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">01:03</span>
+            </div>
+            <strong><a href="http://my.tv.sohu.com/user/detail/43236109.shtml" target="_blank">巨蟒吐出整头牛惊人一幕</a></strong>
+            <p><a href="http://my.tv.sohu.com/user/detail/43236109.shtml" class="bcount" target="_blank">12,005</a></p>
+            </li>
+
+
+            <li>
+            <div class="pic">
+                <a href="http://my.tv.sohu.com/user/" target="_blank"><img class="sz6" alt="" width="88" height="88" lazySrc="http://i3.itc.cn/20130315/607_104c5488_d4b7_8d21_dd43_d6e8c79ece15_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">12:23</span>
+            </div>
+            <strong><a href="http://my.tv.sohu.com/user/" target="_blank">史上最可怜的妹纸们~各种逆天~！</a></strong>
+            <p><a href="http://my.tv.sohu.com/user/" class="bcount" target="_blank">98,865 </a></p>
+            </li>
+
+            <li>
+            <div class="pic">
+                <a href="http://my.tv.sohu.com/user/detail/64988847.shtml" target="_blank"><img class="sz6" alt="" width="88" height="88" lazySrc="http://i3.itc.cn/20130311/607_03c73d28_ecdf_58e5_20d9_c0553153f82b_1.jpg" /></a>
+                <span class="maskBg"></span>
+                <span class="maskTx">01:08</span>
+            </div>
+            <strong><a href="http://my.tv.sohu.com/user/detail/64988847.shtml" target="_blank">暗拍真人版美女脱衣麻将 </a></strong>
+            <p><a href="http://my.tv.sohu.com/user/detail/64988847.shtml" class="bcount" target="_blank">940,854</a></p>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+    <!-- End:mod -->
+        <!-- Start:mod -->
+        <div id="cp_63_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('cp_63_1');
+</script>
+        <!-- End:mod -->
+    </div>
+    <!-- End:right -->
+    <script>
+    messagebus.publish('core.loaded_right');
+    </script>
+    <!-- Start:left -->
+    <div class="left">
+        <!-- Start:infoBox -->
+        <div class="infoBox cfix" id="info">
+            <ul class="tList">
+        
+          <li class="cfix" id="doStar">
+            <span class="stars"></span> <strong class="fs18 c-red score">0.0</strong> 分 <span class="mLR6">|</span> <span class="peoplenum"></span>人
+          </li>
+        
+        
+          <li class="cfix"><span class="bti">主演：</span><div class="con"><a target="_blank" href ="http://so.tv.sohu.com/star/s10_s2108656.html">威尔·史密斯</a> <a target="_blank" href ="http://so.tv.sohu.com/star/s10_s2108657.html">贾登·史密斯</a> <a target="_blank" href ="http://so.tv.sohu.com/star/s10_s2108658.html">伊莎贝拉·弗尔曼</a> <a target="_blank" href ="http://so.tv.sohu.com/star/s10_s2108659.html">佐伊·克罗维兹</a> </div></li>
+          <li class="cfix"><span class="bti">导演：</span><div class="con"><a target="_blank" href ="http://so.tv.sohu.com/star/s10_s2108660.html">M·奈特·沙马兰</a> </div></li>  
+          <li class="cfix h"><span class="bti">年份：</span><div class="con"><a href ="javascript:sohuHD.searchKey('2013',15,1);">2013</a> </div></li>
+          <li class="cfix h"><span class="bti">产地：</span><div class="con"><a href ="javascript:sohuHD.searchKey('好莱坞',4,1);">好莱坞</a> </div></li>
+          <li class="cfix h"><span class="bti">类型：</span><div class="con"><a href ="javascript:sohuHD.searchKey('科幻片',7,1);">科幻片</a>/<a href ="javascript:sohuHD.searchKey('剧情片',7,1);">剧情片</a></div></li>
+          
+            <li class="cfix h">
+              <span class="bti">时长：</span>
+              <div class="con">2分32秒</div>
+            </li>
+          
+          <li class="cfix h">
+            <span class="bti">简介：</span>
+            <div class="con"><p class="wz">影片讲述地球毁灭1000年以后，一对父子的飞船遭遇重创，这个自甘堕落和疯狂的年轻人尝试拯救自己，修复和父亲之间的关系的故事。</p></div>
+          </li>
+        
+                
+        
+            </ul>
+      <span class="btn-unfold" id="foldinfo">展开</span>
+      <div class="twoCode">
+            </div>
+            
+             
+        </div>
+        <!-- End:infoBox -->
+        <!-- Start:rkForm -->
+        <script>window.__tv_M && __tv_M.addTag('comment_start');</script>
+<div id="commentBox" class="rkForm mB20 cfix">
+            <div class="pic"></div>
+            <div class="form">
+                <p>想先评论需要先 <a href="#" class="mLR6">登录</a> 或者 <a href="#" class="mLR6">注册</a> 哦</p>
+                <div class="textarea"><span class="arr"></span><textarea></textarea></div>
+                <div class="cfix">
+                    <span class="emots l"></span>
+                    <div class="l tong">
+                        <span>同步到：</span>
+                        <span class="arrow"></span>
+                    </div>
+                    <input type="submit" class="btn-2 r" value="发 布" />
+                </div>
+            </div>
+        </div>
+    <!-- End:rkForm -->
+        <div class="mB20">
+</div>
+        <!-- Start:mod -->
+        <div id="discussList"  class="mod">
+            <div class="mod-tit">
+                <ul class="tab cfix">
+                    <li class="on">我来说两句(<em id="commentTotal">0</em>)</li>
+                </ul>
+            </div>
+            <div class="rkBox">
+                <div class="rTab mB10 cfix"></div>
+                <ul class="rList cfix" id="commentList"></ul>
+                <!-- Start:page -->
+                <div class="pagesA" id="commentPage"></div>
+                <!-- End:page -->
+            </div>
+            <div class="rkBox" style="display:none;">
+                <ul id="criticsList" class="rList cfix"><li>正在加载影评...</li></ul>
+            </div>
+</div>
+    <!-- End:mod -->        
+        <div class="mB20"><div id="cp_62_1"></div>
+<script type="text/javascript">
+       _sohuHD.AD.init('cp_62_1');
+</script></div>
+        <!-- Start:mod -->
+        
+
+    <!-- End:mod -->
+    </div>
+    <!-- End:left -->
+    <div style="clear:both;"></div>
+<script>
+    messagebus.publish('core.loaded_left');
+    </script>
+</div>
+
+<style>
+#miaozhenad{background-color: #FFFFFF;bottom: 0;right: 16px;position: fixed;_position: absolute;width:280px; height:200px;zoom:1;z-index:1002;}
+#miaozhenad .mztitle {display:inline-block;color:blue; font-size:12px; line-height:40px; font-weight:normal;text-align:center; background-image:url(http://tv.sohu.com/upload/csad/mdl/bg.jpg);width:280px;height:37px;padding-top:8px;}
+#miaozhenad .mzclose {position: absolute; cursor: pointer; height: 29px; width: 25px; right: -16px; top: -15px; background: url(http://tv.sohu.com/upload/csad/mdl/x.png) no-repeat scroll 0 0 transparent;}
+</style>
+<div id="miaozhenad" style="display:none;">
+    <a class="mzclose" title="Close" onclick="document.getElementById('miaozhenad').style.display='none';"></a>
+    <span id="miaozhenadcon">
+    </span>
+</div>
+<script type="text/javascript">
+var _mzAD = sohuHD.cookie('miaozhenAD') || "";
+
+var miaozhenShow = function(t){
+  if(!t) return;
+  var exdate=new Date();
+    var pb = '';
+  exdate = new Date(exdate.getFullYear(),exdate.getMonth(),exdate.getDate(),23,59,59);
+
+  if(_mzAD === ''){
+    document.cookie = "miaozhenAD=1; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/280_100.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/loreal/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201302/5e1dae0d4a5f50d7a64badbf3140aa04.php?a=99';
+  }else if(_mzAD === '1'){
+    document.cookie = "miaozhenAD=2; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/280_100.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/loreal/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=5e1dae0d,4a5f50d7,a64badbf,3140aa04&AdID=4268029" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201302/5e1dae0d4a5f50d7a64badbf3140aa04.php?a=99';
+  }
+
+    if (typeof sohuHD !== "undefined" && sohuHD.pingback) {
+        sohuHD.pingback(pb);
+    }
+
+    setTimeout(function(){
+    document.getElementById("miaozhenad").style.display="none";
+    }, 15000);
+}
+
+var _miaozhen_ad = function () {
+    var head = document.getElementsByTagName("head")[0] || document.documentElement;
+    var script = document.createElement("script");
+    if (_mzAD === '1' || _mzAD === '') {
+        script.src = "http://p.aty.sohu.com/inquire.do?callback=miaozhenShow&type=2&_t="+(new Date().getTime());
+        head.insertBefore( script, head.firstChild );
+    }
+};
+//_miaozhen_ad();
+
+var _meadjohnsonAD = sohuHD.cookie('meadjohnsonAD') || "";
+var meadjohnsonShow = function(t){
+  if(!t) return;
+  var exdate=new Date();
+    var pb = '';
+  exdate = new Date(exdate.getFullYear(),exdate.getMonth(),exdate.getDate(),23,59,59);
+
+  if(_meadjohnsonAD === ''){
+    document.cookie = "meadjohnsonAD=1; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201301&TargetID=sohu&Values=8178b1cd,9982abdb,179ae7d0,77ca152c&AdID=13273814" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201301&TargetID=sohu&Values=8178b1cd,9982abdb,179ae7d0,77ca152c&AdID=13273814" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/280_100.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/loreal/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201301&TargetID=sohu&Values=8178b1cd,9982abdb,179ae7d0,77ca152c&AdID=13273814" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201301/8178b1cd9982abdb179ae7d077ca152c.php?a=99';
+  }else if(_meadjohnsonAD === '1'){
+    document.cookie = "meadjohnsonAD=2; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201203&TargetID=sohu&Values=a17b2616,bfa2ae29,16c07d8a,c0be29da&AdID=12482874" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201203&TargetID=sohu&Values=a17b2616,bfa2ae29,16c07d8a,c0be29da&AdID=12482874" target="_blank"><img src="http://tv.sohu.com/upload/csad/loreal/280_100.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/loreal/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201203&TargetID=sohu&Values=a17b2616,bfa2ae29,16c07d8a,c0be29da&AdID=12482874" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201301/8178b1cd9982abdb179ae7d077ca152c.php?a=99';
+  }
+
+    if (typeof sohuHD !== "undefined" && sohuHD.pingback) {
+        sohuHD.pingback(pb);
+    }
+
+    setTimeout(function(){
+    document.getElementById("miaozhenad").style.display="none";
+    }, 15000);
+}
+var _meadjohnson_oad_callback = function () {
+    var head = document.getElementsByTagName("head")[0] || document.documentElement;
+    var script = document.createElement("script");
+    if (_meadjohnsonAD === '1' || _meadjohnsonAD === '') {
+        script.src = "http://p.aty.sohu.com/inquire.do?callback=meadjohnsonShow&type=1&_t="+(new Date().getTime());
+        head.insertBefore( script, head.firstChild );
+    }
+};
+
+var _mdlAD = sohuHD.cookie('mdlAD') || "";
+var mdlShow = function(t){
+  if(!t) return;
+  var exdate=new Date();
+    var pb = '';
+  exdate = new Date(exdate.getFullYear(),exdate.getMonth(),exdate.getDate(),23,59,59);
+
+  if(_mdlAD === ''){
+    document.cookie = "mdlAD=1; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank"><img src="http://tv.sohu.com/upload/csad/mdl/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank"><img src="http://tv.sohu.com/upload/csad/mdl/280_100_3.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/mdl/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201302/9de9cd1d4a9f1cf6b64b92dc713fe3b5.php?a=99';
+  }else if(_mdlAD === '1'){
+    document.cookie = "mdlAD=2; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank"><img src="http://tv.sohu.com/upload/csad/mdl/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank"><img src="http://tv.sohu.com/upload/csad/mdl/280_100_3.jpg" border="0" /></a>'
+            ,'<a class="mztitle" style="background-image:url(http://tv.sohu.com/upload/csad/mdl/bg.jpg)" href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201302&TargetID=sohu&Values=9de9cd1d,4a9f1cf6,b64b92dc,713fe3b5&AdID=4217262" target="_blank" style="color:#ffffff;text-decoration:none;">立即点击参与在线调研</a>']).join('');
+        pb = 'http://xls.go.sohu.com/201302/9de9cd1d4a9f1cf6b64b92dc713fe3b5.php?a=99';
+  }
+
+    if (typeof sohuHD !== "undefined" && sohuHD.pingback) {
+        sohuHD.pingback(pb);
+    }
+
+    setTimeout(function(){
+    document.getElementById("miaozhenad").style.display="none";
+    }, 15000);
+}
+var _mdl_oad_callback = function () {
+    mdlShow(true);
+};
+
+var _maxwellAD = sohuHD.cookie('maxwellAD') || "";
+var maxwellShow = function(t){
+  if(!t) return;
+  var exdate=new Date();
+    var pb = '';
+  exdate = new Date(exdate.getFullYear(),exdate.getMonth(),exdate.getDate(),23,59,59);
+
+  if(_maxwellAD === ''){
+    document.cookie = "maxwellAD=1; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/280_100.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/foot.jpg" border="0" /></a>']).join('');
+        pb = 'http://xls.go.sohu.com/201303/14caa81f9615fdd22897e5226598ab9e.php?a=99';
+  }else if(_maxwellAD === '1'){
+    document.cookie = "maxwellAD=2; expires="+exdate.toGMTString()+"; path=/;";
+    document.getElementById("miaozhenad").style.display="block";
+        document.getElementById("miaozhenadcon").innerHTML = (['<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/title.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/280_100.jpg" border="0" /></a>'
+            ,'<a href="http://sohu.ad-plus.cn/event.ng/Type=click&FlightID=201303&TargetID=sohu&Values=14caa81f,9615fdd2,2897e522,6598ab9e&AdID=10035719" target="_blank"><img src="http://tv.sohu.com/upload/csad/maxwell/foot.jpg" border="0" /></a>']).join('');
+        pb = 'http://xls.go.sohu.com/201303/14caa81f9615fdd22897e5226598ab9e.php?a=99';
+  }
+
+    if (typeof sohuHD !== "undefined" && sohuHD.pingback) {
+        sohuHD.pingback(pb);
+    }
+
+    setTimeout(function(){
+    document.getElementById("miaozhenad").style.display="none";
+    }, 15000);
+}
+var _maxwell_oad_callback = function () {
+    maxwellShow(true);
+};
+</script>
+<script>window.__tv_M && __tv_M.addTag('foot');</script>
+<!-- Start:footer -->
+<div id="footArea">
+    <div class="footSearch">
+        <div class="search">
+            <form id="sFormA" autocomplete="off" target="_blank" onSubmit="return false;" name="sFormA" method="post">
+                <div class="text l" onMouseOut="this.className='text l'" onMouseDown="this.className='text_click l'"><input type="text" id="sKeyA" class="fs14" value="绝命毒师"></div>
+                <input type="submit" class="bt vat pointer l" value="" onMouseOut="this.className='bt vat pointer l'" onMouseDown="this.className='btDown vat pointer l'" onMouseOver="this.className='btOver vat pointer l'">
+            </form>
+        </div>
+    </div>
+    <div class="clear footLink">
+        <dl>
+            <dt><a href="http://tv.sohu.com/" target="_blank">首页</a></dt>
+            <dd><a target="_blank" href="http://tv.sohu.com/drama/">电视剧</a><a href="http://tv.sohu.com/movie/" target="_blank">电影</a><br><a href="http://tv.sohu.com/documentary/" target="_blank">纪录片</a><a href="http://tv.sohu.com/comic/" target="_blank">动漫</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://tv.sohu.com/yule/" target="_blank">娱乐</a></dt>
+            <dd><a href="http://tv.sohu.com/self/" target="_blank">出品</a><a href="http://tv.sohu.com/music/" target="_blank">音乐</a><br><a href="http://tv.sohu.com/show/" target="_blank">综艺</a><a href="http://tv.sohu.com/entnews/" target="_blank">娱乐新闻</a><br><a href="http://tv.sohu.com/microprogram/" target="_blank">微栏目</a><a href="http://show.sohu.com/mi_masterRandom.action?showqd=1024" target="_blank">秀场</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://tv.sohu.com/news/" target="_blank">新闻</a></dt>
+            <dd><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u56fd_u5185_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">国内</a><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u56fd_u9645_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">国际</a><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u519b_u4e8b_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">军事</a><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u79d1_u6559_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">科技</a><br><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u8d22_u7ecf_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">财经</a><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u793e_u4f1a_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">社会</a><a target="_blank" href="http://so.tv.sohu.com/list_p11300_p2_u751f_u6d3b_u89c6_u89d2_p3_p4-1_p5_p6_p73_p80_p9-2_p101_p11.html">生活</a><a target="_blank" href="http://tv.sohu.com/travel/">旅游</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://tv.sohu.com/drama/" target="_blank">电视</a></dt>
+            <dd><a href="http://live.tv.sohu.com/" target="_blank">直播</a><br><a href="http://live.tv.sohu.com/jmyg" target="_blank">节目</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://my.tv.sohu.com/" target="_blank">空间</a></dt>
+            <dd><a target="_blank" href="http://my.tv.sohu.com/channel/funny">搞笑</a><a target="_blank" href="http://my.tv.sohu.com/channel/bagua">八卦</a><br><a target="_blank" href="http://my.tv.sohu.com/channel/rare">猎奇</a><a target="_blank" href="http://my.tv.sohu.com/channel/yuanchuang">原创</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://tv.sohu.com/vip/" target="_blank">VIP</a></dt>
+            <dd><a href="http://tv.sohu.com/vip/" target="_blank">电影</a><a href="http://tv189.tv.sohu.com" target="_blank">院线</a><br><a href="http://store.tv.sohu.com/edu/" target="_blank">教育</a></dd>
+        </dl>
+        <div class="did_line"></div>
+        <dl>
+            <dt><a>服务</a></dt>
+            <dd>
+                <a href="http://index.tv.sohu.com/" target="_blank" class="a1">指数</a>
+                <a href="http://tv.sohu.com/upload/feedback/feedback.html" target="_blank">反馈</a>
+                <a href="http://tv.sohu.com/upload/hdfeedback/index.jsp" target="_blank">帮助</a>
+                <br />
+                <a href="http://tv.sohu.com/upload/hdfeedback/index.jsp?50" target="_blank" class="a5ico">版权投诉</a>
+                <a href="http://open.tv.sohu.com" target="_blank">开放平台</a>
+                <br><a href="http://tv.sohu.com/about/" target="_blank" class="a4">关于我们</a>
+                <a href="http://tv.sohu.com/map/" target="_blank" class="a5ico">网站地图</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a>软件</a></dt>
+            <dd class="lastdd"><a href="http://tv.sohu.com/app?x=1" target="_blank" class="a2">移动客户端</a><br><a href="http://tv.sohu.com/app" target="_blank" class="a3">搜狐影音</a></dd>
+        </dl>
+    </div>
+</div>
+<div id="foot"> 
+    <div class="area tac"> <a href="javascript:void(0)" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.sohu.com');return false;">设置首页</a> - <a href="http://pinyin.sogou.com/" target="_blank">搜狗输入法</a> - <a href="http://up.sohu.com/" rel=nofollow target="_blank">支付中心</a> - <a href="http://hr.sohu.com" target="_blank">搜狐招聘</a> - <a href="http://ad.sohu.com/" rel=nofollow target="_blank">广告服务</a> - <a href="http://sohucallcenter.blog.sohu.com/" rel=nofollow target="_blank">客服中心</a> - <a href="http://corp.sohu.com/s2006/contactus/" rel=nofollow target="_blank">联系方式</a> - <a href="http://www.sohu.com/about/privacy.html" rel=nofollow target="_blank">保护隐私权</a> - <a href="http://corp.sohu.com/" rel=nofollow target="_blank">About SOHU</a> - <a href="http://corp.sohu.com/indexcn.shtml" rel=nofollow target="_blank">公司介绍</a> <br>Copyright <span class="fontArial">&copy;</span> <script>document.write(new Date().getFullYear());</script> Sohu.com Inc. All Rights Reserved. 飞狐信息技术(天津)有限公司 <span class="unline"><a href="http://corp.sohu.com/s2007/copyright/" target="_blank">版权所有</a></span> <br>搜狐不良信息举报电话：010－62728061 举报邮箱：<a href="mailto:jubao@contact.sohu.com">jubao@contact.sohu.com</a> </div> 
+</div>
+<!-- End:footer -->
+<script>
+messagebus.publish('core.loaded_end');
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://tv.sohu.com/upload/Trace/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-2311080300";typeof cid=="undefined"&&(cid="7");switch(cid){case"2":vjAcc="860010-2311040300";break;case"1":vjAcc="860010-2311030300";break;case"2":vjAcc="860010-2311070300";break;case"16":vjAcc="860010-2311060300";break;case"7":vjAcc="860010-2311080300";break;case"8":vjAcc="860010-2311050300";break;case"24":vjAcc="860010-2311130300";break;case"21":vjAcc="860010-2311140300";break;case"6":vjAcc="860010-2311150300";break;case"25":vjAcc="860010-2311100100";break;case"13":vjAcc="860010-2311100300";break;default:vjAcc="860010-2311080300"}var wrUrl="http://sohu.wrating.com/";vjTrack("")
+</script>
+<!-- END WRating v1.0 -->
+
+<script>
+var _iwt_UA="UA-sohu-123456";
+</script>
+<script type="text/javascript" src="http://tv.sohu.com/upload/Trace/iwt-min.js"></script>
+<script type="text/javascript" src="http://js.tv.itc.cn/hdpv.js"></script>
+<!-- Begin comScore Tag --> 
+<script> 
+  document.write(unescape("%3Cscript src=' " + (document.location.protocol == "https:" ? "https://sb" : "http://b") 
++ ".scorecardresearch.com/beacon.js'  %3E%3C/script%3E")); 
+
+</script> 
+ 
+<script> 
+if(typeof COMSCORE!=="undefined"){
+  COMSCORE.beacon({ 
+    c1:2, 
+    c2:"7395122", 
+    c3:"", 
+    c4:"", 
+    c5:"", 
+    c6:"", 
+    c15:"" 
+  }); 
+}
+</script> 
+<noscript> 
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=7395122&c3=&c4=&c5=&c6=&c15=&cj=1" /> 
+</noscript> 
+<!-- End comScore Tag -->
+<script type="text/javascript" src="http://js.mail.sohu.com/pv/pv_tv.1107251650.js"></script>
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<script type="text/javascript" src="http://tv.sohu.com/upload/Trace/nielsen/v60.js"></script>
+<script type="text/javascript">
+ var pvar = { cid: "cn-sohuwj", content: "0", server: "secure-cn" };
+ var feat = { surveys_enabled: 1, sample_rate: 0.05 };
+ var trac = nol_t(pvar, feat);
+ trac.record().post().do_sample();
+</script>
+<noscript>
+ <div>
+ <img src="//secure-cn.imrworldwide.com/cgi-bin/m?ci=cn-sohuwj&amp;cg=0&amp;cc=1&amp;ts=noscript"
+ width="1" height="1" alt="" />
+ </div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<script>
+function _testSpeed(a){if(!a||a.isDo==0)return!1;var b=a.turl,c="http://sptjs1.hd.sohu.com.cn?";c=c+"nid="+a.nid+"&cip="+a.cip+"&file="+a.file+"&cdnIp="+a.cdnIp+"&",window.__tv_M&&__tv_M.startCodeListen(b,1e4,c),window.__tv_M.getScript(b,function(){window.__tv_M&&__tv_M.endCodeListen(b,c)})}
+if(typeof cid != 'undefined' && (cid=="16" || cid=="24" || cid=="33")) {
+   window.__tv_M.getScript('http://data.vod.itc.cn/ts?type=2');
+}
+</script>
+
+</body>
+</html>
+

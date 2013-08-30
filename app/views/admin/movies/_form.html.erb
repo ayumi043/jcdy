@@ -1,0 +1,145 @@
+<%= semantic_form_for [:admin, @movie] do |f| %>
+
+  <fieldset class="inputs">
+    <legend>
+      <span>Movie Details</span>
+    </legend>
+    <ol>
+      <li class="string input optional stringish">
+        <%= f.input :name %></li>
+      <li class="select input optional" id="movie_category_ids_input">
+        <%#= f.input :category_ids, :as => :check_boxes, :collection => Category.all, 
+                    :input_html => { :size => 1, :checked => Proc.new{ 2 < 1}  } %>
+
+        <%#= f.collection_select :category_ids, Category.all, :id, :name %>
+
+
+        <%= f.label :类别 %>
+        <% for category in Category.all %>
+            <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category) %>
+            <%= category.name %>
+        <% end %>
+      </li>
+      <li class="string input optional stringish">
+        <%= f.label :封面 %>
+        <%= f.text_field :pic %></li>
+      <li class="string input optional stringish">
+        <%= f.input :actor %></li>
+      <li class="string input optional stringish">
+        <%= f.input :area %></li>
+      <li class="string input optional stringish">
+        <%= f.input :release %></li>  
+      <li class="string input optional stringish">
+        <%= f.input :intro %></li>  
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <%#= render :partial => 'admin/movies/baiduvideoform', :locals => {:form => f} %>
+
+    <%= f.fields_for :baiduvideos do |f2| %>
+      <div class="field">
+        <%= f2.label "name" %><br />
+        <%= f2.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f2.label "link" %><br />
+        <%= f2.text_field :link %>
+      </div>  
+      <%# binding.pry %>
+      <% unless f2.object.nil? || f2.object.new_record? %> 
+        <div class="field"> <%= f2.label :_destroy, '删除:' %> <%= f2.check_box :_destroy %> </div> 
+      <% end %>
+      <br>
+
+    <% end %>
+
+    <hr>
+        <span>百度影音:</span>
+        <%= fields_for  "movie[baiduvideos_attributes][33]" do |f2| %>
+          <div class="field">
+            <%= f2.label "name" %><br />
+            <%= f2.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f2.label "link" %><br />
+            <%= f2.text_field :link %>
+          </div>  
+        <% end %>
+    <hr>
+    <div><a>添加百度影音</a></div>
+  </fieldset>
+
+  <%#= f.actions %>
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="movie_submit_action">
+        <input name="commit" type="submit" value="Update Movie">
+      </li>
+      <li class="cancel"><a href="<%= admin_movies_path%>">Cancel</a></li>
+    </ol>
+  </fieldset>
+
+<% end %>
+
+<%#= semantic_form_for [:admin, @movie] do |f| %>
+<%#= f.inputs :name, :pic %>
+<%#= f.buttons :commit %>
+<%# end %>
+
+<style type="text/css" media="screen">
+  #movie_category_ids_input li{float: left;margin-right: 12px}
+  #myForm{position: absolute;}
+  #myForm #file1{width:160px;}
+</style>
+
+<form id="myForm"  action="http://v0.api.upyun.com/jcdypic/" method="post" enctype="multipart/form-data">
+  <%= upyun_form_input_tag() %>
+  <input type="file" name="file" id="file1" />
+  <button type="submit">上传图片</button>
+</form>
+
+<script type="text/javascript">
+
+
+$(function(){
+  var pos = $("#movie_pic").offset();
+  $("#myForm").css({top:pos.top+30,left:pos.left});
+});
+
+
+$(document).ready(function() { 
+  var options = { 
+    //target:        '#output2',   // target element(s) to be updated with server response 
+    beforeSubmit:  showRequest,  // pre-submit callback 
+    success:       showResponse  // post-submit callback  
+  }; 
+
+  // bind to the form's submit event 
+  $('#myForm').submit(function() {        
+    $(this).ajaxSubmit(options); 
+
+    // !!! Important !!! 
+    // always return false to prevent standard browser submit and page navigation 
+    return false; 
+  }); 
+}); 
+ 
+// pre-submit callback 
+function showRequest(formData, jqForm, options) {    
+  var queryString = $.param(formData);  
+  // alert('About to submit: \n\n' + queryString);     
+  return true; 
+} 
+ 
+// post-submit callback 
+function showResponse(responseText, statusText, xhr, $form)  {    
+ 
+  $("#movie_pic").val(
+    (jQuery.parseJSON(responseText)).url
+  );
+  // alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+  //     '\n\nThe output div should have already been updated with the responseText.'); 
+
+} 
+</script>

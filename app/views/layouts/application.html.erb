@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title><%= yield(:title)%></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="<%= yield(:keywords)%>" name="keywords" />
+  <meta content="<%= yield(:description)%>" name="description" />
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <link href="<%= asset_path 'favicon.ico' %>" rel="bookmark" type="image/x-icon" /> 
+  <link href="<%= asset_path 'favicon.ico' %>" rel="icon" type="image/x-icon" /> 
+  <link href="<%= asset_path 'favicon.ico' %>" rel="shortcut icon" type="image/x-icon" />
+  <link href="http://libs.baidu.com/bootstrap/2.0.4/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag  "application", :media => "all" %> 
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+
+<body id="tvBg">
+
+<div class="header">
+  <div class="bartop">
+    <div class="b-inner">
+      <a href="javascript:window.external.AddFavorite(location.href,document.title)" title="将本站加入到你的收藏夹">加入收藏</a>
+      <span>|</span>
+      <a href="<%= root_url %>" title="精彩电影网">首页</a>
+    </div>
+  </div>
+  
+  <div class="newareaTop">
+    <div class="area clear">
+      <div class="logo_ad_box">
+        <h1 class="logo">
+        <a id="index_logo" href="<%= root_url %>" title="精彩电影网">
+          <img alt="精彩电影网" src="<%= asset_path 'logo.png' %>" width="175" height="54" />
+        </a>
+      </h1>
+    </div>
+    <div class="newsearch l">
+      <form target="_blank" action="<%= movies_all_search_path %>" method="GET">
+        <div class="text cfix">
+          <input id="gNewSearch" type="text" class="fs14 t-input" value="无性不爱" name="q">
+          <a href="javascript:;">
+            <input type="submit" value="" class="bt" />
+          </a>
+        </div>
+      </form>
+      <div class="cfix kword">
+        <div class="r">
+          
+        </div>
+        <% @top_searches.each do |search| %>
+          <%= link_to search.name, "#{movies_all_search_path}/#{search.name}", {:title => search.name, :target => "_blank"} %>
+        <% end %>
+      </div>
+    </div>
+    <div class="r top8"><a href="<%= movies_path%>" target="_blank">全部电影</a></div>
+    </div>
+  </div>
+
+  <div class="newmenubox clear">
+    <div class="navbar clear">
+      <div class="clear">
+        <a id="2ndFloatNavBt" 
+        <% if params[:controller] == "home" %>  
+          class="btn_all l btn_all_hover"
+          <% else %>  class="btn_all l"
+          <% end %> href="<%= root_url %>">
+          <span>首页</span>
+        </a>
+        <ul class="navmain l">
+          <% @categories.each do |category| %>
+            <li <% if params[:id] == category.id.to_s then %> class="selected" <% end %>  >
+              <a href="<%= category_path(category) %>" title="<%=category.name%>">
+                <span><%= category.name %></span>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="navRight r">
+          <li <% if params[:controller] == "lives" then %> class="selected" <% end %>  ><a href="<%= live_path %>">电视直播</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<%= yield %>
+
+
+<div id="footArea">
+  <div id="foot">
+    <div class="flink">    
+      <div class="ffli">友情链接</div>
+    </div>
+    <div class="flinklist">
+      <a href="http://www.damipt.com/" target="_blank">百度影音电影</a>
+      <a href="http://www.fm1058.cc/" target="_blank">FM1058楚天电影</a>
+      <a href="http://www.my917.com/" target="_blank">917影视</a>
+      <a href="http://www.jcdy.co" target="_blank">精彩电影网</a>
+    </div>
+  </div>
+
+  <div class="fbottom">
+    <div class="footnav">
+      <a href="http://www.jcdy.co/sitemap.xml" target="_blank">网站地图</a>
+      <a href="http://www.jcdy.co/movies" target="_blank">最近更新</a>
+      <a>RSS订阅</a>
+    </div>
+    <div class="area tac">
+        免责声明:本站不保存视频，所有视频均从互联网收集而来，版权归原创者所有，如果侵犯了你的权益或是有其他不妥，请通知我们，我们会及时删除相关内容，谢谢合作！如果您发现有不符合规定的，请及时联系我们处理（联系邮箱：914567714#qq.com）。
+    </div>
+  </div>
+
+</div>
+
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+  <%= javascript_include_tag "application" %>
+  
+  <div style="display:none;">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39511156-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </div>
+  
+</html>
+</body>

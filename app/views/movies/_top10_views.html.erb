@@ -1,0 +1,29 @@
+<% cache("top10", :expires_in => 48.hour) do %>
+
+   <% 
+    # @top10_movies = Movie.all.sort_by{|x| x.hits.get() }.reverse.take(15)
+
+    category = Category.where(:name => /剧情|爱情/)
+    @top10_movies = (category.first.movies + category.last.movies)
+                    .sort_by{|x| x.hits.get() }.reverse.take(20)
+
+    # @top10_movies = Movie.any_of({:category_ids => category.first}, {:category_ids => category.last})
+    #                      .sort_by{|x| x.hits.get() }.reverse.take(15)                  
+   %>
+  <div class="charts">
+    <div class="mod-tit">
+      <h4>
+        <span>热播排行</span>
+      </h4>
+    </div>
+    <div class="charts-con cfix">
+      <ul class="clist cfix clistL">
+        <% @top10_movies.each_with_index do |movie, index| %>
+          <li>
+            <em <%= raw "class='stree'" if index <= 4 %> ><%= "%02d" % (index + 1) %>.</em><%= link_to movie.name, movie, {:title => movie.name, :target => "_blank"} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
