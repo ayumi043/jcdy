@@ -18,8 +18,11 @@ namespace :assets do
     # ActionController::Base.cache_store.clear
     # expire_page :controller => "home", :action => "index"
 
+    download_img_from_local('http://pic.8888fy.com/pic/uploadimg/2012-7/4881.jpg')
+
     
     # Movie.each{ |x| download_img_from_local(x.pic) }
+
 
     # per_batch = 1000
     # 0.step(Movie.count, per_batch) do |offset|

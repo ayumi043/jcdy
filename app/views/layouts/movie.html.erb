@@ -48,7 +48,25 @@
   <%= yield %>
 
   <div class="playlist clearfix">
-  <div class="bdy tj">推荐影片：</div>
+      <!-- Duoshuo Comment BEGIN -->
+      <div class="ds-thread"></div>
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"jcdy"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+      <!-- Duoshuo Comment END -->
+  </div>
+
+  <div class="playlist clearfix">
+
+    <div class="bdy tj">推荐影片：</div>
     <% cache("tj#{@movie.categories.first.id}", :expires_in => 48.hour) do %>
         <% @top10_movies = @movie.categories.first.movies.sort_by{|x| x.hits.get() }.reverse.take(14) %>
           <div class="tjlist">
@@ -65,7 +83,8 @@
               <% end %>
             </ul>
         </div>
-      <% end %>
+    <% end %>
+
   </div>
 
   <div id="footArea">
